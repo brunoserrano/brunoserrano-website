@@ -96,13 +96,13 @@ const experiences = [
     {
         organization: "Freelancer Software Engineer",
         jobTitle: "Fractional Architect & Lead Engineer",
-        period: "4 Years 2 Months Overlap",
+        period: "Feb 2016 – Mar 2020 (4 yrs 2 mos)",
         location: "Goiânia, Goiás, Brazil",
         category: "freelance",
-        badge: "Concurrent Consulting Track (Feb 2016 – Mar 2020)",
+        badge: "Independent Consulting",
         accentColor: "amber",
         branch: "consulting",
-        summaryHtml: "Consulted as a Fractional Architect and Lead Engineer for high-growth businesses to deliver mission-critical proof-of-concepts (PoCs) and minimum viable products (MVPs). Guided technical roadmaps and maintained architectural integrity across full-stack mobile, web, API, e-commerce, and decentralized blockchain systems.",
+        summaryHtml: "Partnered with startups and scaling businesses as a Fractional Architect and Lead Engineer to build, modernize, and operate production applications serving active end users. Led greenfield architectures from scratch and evolved existing platforms across mobile, web, cloud APIs, e-commerce, and blockchain ecosystems.",
         techStack: [
             "C#", "Desktop Development", "Xamarin", ".NET", ".NET Core", "Swift",
             "Objective-C", "iOS Development", "Java", "Android Development",
@@ -251,16 +251,14 @@ const accentStyles = {
     },
     amber: {
         cardHover: "border-2 border-amber-500/60 freelance-stripes glow-effect-amber",
-        badge: "bg-amber-500/20 text-amber-300 border-amber-500/40 font-bold",
-        location: "text-slate-400",
+        badge: "bg-amber-500/15 text-amber-300 border-amber-500/30 font-semibold",
+        location: "text-amber-400",
         heading: "text-amber-400"
     }
 };
 
 const icons = {
     calendar: `<svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>`,
-    clock: `<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`,
-    lightning: `<svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>`,
     pin: `<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>`,
     globe: `<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>`,
     server: `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/></svg>`,
@@ -277,28 +275,15 @@ function renderExperiences() {
         const isConsulting = exp.branch === 'consulting';
         const locIcon = exp.location.toLowerCase() === 'remote' ? icons.globe : icons.pin;
 
-        const headerHtml = isConsulting
-            ? `
-                <div class="flex flex-wrap items-center justify-between gap-2 mb-4 pb-3 border-b border-amber-500/30">
-                    <span class="px-3 py-1 rounded-md text-xs ${style.badge} border flex items-center gap-1.5">
-                        ${icons.lightning}
-                        ${exp.badge}
-                    </span>
-                    <span class="text-xs font-semibold text-amber-400 flex items-center gap-1">
-                        ${icons.clock}
-                        ${exp.period}
-                    </span>
-                </div>
-            `
-            : `
-                <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
-                    <span class="px-2.5 py-0.5 rounded-md text-xs ${style.badge} border">${exp.badge}</span>
-                    <span class="text-xs font-medium text-slate-400 flex items-center gap-1">
-                        ${icons.calendar}
-                        ${exp.period}
-                    </span>
-                </div>
-            `;
+        const headerHtml = `
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                <span class="px-2.5 py-0.5 rounded-md text-xs ${style.badge} border">${exp.badge}</span>
+                <span class="text-xs font-medium text-slate-400 flex items-center gap-1">
+                    ${icons.calendar}
+                    ${exp.period}
+                </span>
+            </div>
+        `;
 
         const summaryHtml = exp.summaryHtml
             ? `<p class="text-slate-300 ${exp.highlights ? 'text-sm mb-4' : 'text-xs sm:text-sm'} leading-relaxed">${exp.summaryHtml}</p>`
@@ -339,11 +324,11 @@ function renderExperiences() {
                 <div class="${cardClasses}">
                     ${headerHtml}
 
-                    <h3 class="text-xl font-bold text-white flex flex-wrap items-center gap-2 ${isConsulting ? 'mb-1' : ''}">
+                    <h3 class="text-xl font-bold text-white flex flex-wrap items-center gap-2">
                         ${exp.organization}
                         <span class="text-sm font-normal ${isConsulting ? 'text-amber-300' : 'text-slate-400'}">| ${exp.jobTitle}</span>
                     </h3>
-                    <p class="text-xs ${style.location} font-medium ${exp.highlightsSectionTitle || isConsulting ? 'mb-4' : 'mb-3'} flex items-center gap-1">
+                    <p class="text-xs ${style.location} font-medium ${exp.highlightsSectionTitle ? 'mb-4' : 'mb-3'} flex items-center gap-1">
                         ${locIcon}
                         ${exp.location}
                     </p>
