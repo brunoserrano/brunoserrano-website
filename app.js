@@ -181,27 +181,27 @@ const experiences = [
  */
 const ecosystemCategories = [
     {
-        title: "Backend, Cloud & Security",
+        title: "Backend, Cloud & Databases",
         accentColor: "sky",
         icon: "server",
         skills: [
-            "C#", ".NET Core", ".NET Framework", "ASP.NET MVC",
+            "C#", ".NET Core", ".NET Framework", "ASP.NET MVC", "PHP",
             "STS (Security Token Service)", "Microsoft Entra ID",
+            "MSSQL", "SQL", "Azure SQL Server",
             "Azure Functions", "Azure Storage", "Azure Key Vault",
             "Azure Blockchain Workbench", "Docker", "Kubernetes",
             "RabbitMQ", "Microservices Architecture", "REST APIs", "SOAP"
         ]
     },
     {
-        title: "Frontend, Mobile & Databases",
+        title: "Frontend, Mobile & Desktop",
         accentColor: "indigo",
         icon: "device",
         skills: [
             "React.js", "React Native", "JavaScript", "HTML5 / CSS3",
-            "Electron", "Xamarin.Forms", "Xamarin", "Swift",
-            "Objective-C", "iOS Native", "Java", "Android Native",
-            "Windows Phone", "MSSQL", "SQL", "Azure SQL Server",
-            "PHP", "WordPress"
+            "Razor", "Electron", "Xamarin.Forms", "Xamarin",
+            "Swift", "Objective-C", "iOS Native",
+            "Java", "Android Native", "Windows Phone", "WordPress"
         ]
     },
     {
@@ -212,7 +212,7 @@ const ecosystemCategories = [
             "Git", "CI/CD with Azure DevOps", "Azure Boards",
             "Azure Artifacts", "TFS", "GitHub Copilot",
             "Apache JMeter", "JUnit", "Facebook SDK",
-            "Google Maps SDK", "Razor", "WooCommerce",
+            "Google Maps SDK", "WooCommerce",
             "Data Extraction / ETL", "Function Points"
         ]
     }
